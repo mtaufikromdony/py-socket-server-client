@@ -1,0 +1,43 @@
+---
+version: '3'
+services:
+  python-sockserver:
+    container_name: socket-server-py
+    image: socket-server
+    build: ./socket-server-py
+    hostname: socket-server
+    networks:
+      vpcbr:
+        ipv4_address: 192.168.100.100
+    tty: true
+
+  python-sockclient001:
+    container_name: socket-client-py001
+    image: socket-client-py001
+    build: ./socket-client-py
+    hostname: socket-client001
+    depends_on:
+      - python-sockserver
+    networks:
+      vpcbr:
+        ipv4_address: 192.168.100.99
+    tty: true
+
+  python-sockclient002:
+    container_name: socket-client-py002
+    image: socket-client-py002
+    build: ./socket-client-py
+    hostname: socket-client002
+    depends_on:
+      - python-sockserver
+    networks:
+      vpcbr:
+        ipv4_address: 192.168.100.98
+    tty: true
+
+networks:
+  vpcbr:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 192.168.100.0/24
