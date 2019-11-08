@@ -42,7 +42,7 @@ docker-compose version 1.24.0, build 0aa59064
 
 - clone the repository
 ```
-$ git clone https://github.com/taufikromdony/py-socket-server-client.git
+$ git clone https://github.com/mtaufikromdony/py-socket-server-client.git
 ```
 
 Run docker compose to build the container
