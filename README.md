@@ -1,4 +1,6 @@
-## Prerequisite 
+##Python socket programming client server
+
+## Prerequisite
 
 Tested running on Centos 7
 
@@ -8,7 +10,7 @@ to run this program you should install docker and docker-compose
 $ sudo yum install -y yum-utils \
   device-mapper-persistent-data \
   lvm2
-``` 
+```
 ```
 $ sudo yum-config-manager \
     --add-repo \
@@ -49,7 +51,7 @@ Run docker compose to build the container
 $ docker-compose up --build -d
 ```
 
-## validate the program is running properly
+## validate the program
 
 1. Check the docker containers status
 ```
@@ -92,7 +94,7 @@ root@192.168.100.98's password:
 SSH to socket-client-py002 container
 ```
 ssh root@192.168.100.99
-root@192.168.100.99's password: 
+root@192.168.100.99's password:
 ```
 4. Check again docker logs on the `socket-server-py` container
 ```
@@ -115,4 +117,3 @@ socket-client containers successfully send the data to server
 ```
 sudo docker-compose down --rmi all
 ```
-
